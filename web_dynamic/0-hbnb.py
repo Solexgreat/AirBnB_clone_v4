@@ -35,13 +35,14 @@ def hbnb():
     places = storage.all(Place).values()
     places = sorted(places, key=lambda k: k.name)
 
-
+    c_id=uuid.uuid4()
+    cache_id=(str(c_id))
 
     return render_template('0-hbnb.html',
                            states=st_ct,
                            amenities=amenities,
                            places=places,
-                           cache_id=uuid.uuid4())
+                           cache_id=cache_id)
 
 
 if __name__ == "__main__":
